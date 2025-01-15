@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    /*ekranı tamamen kaplar görsel */
+    background-image: url(assets/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    /*column =daha sorasında altına gelecek olan başka bir div alta gelsin /\ row= yanına gelsin */
+    justify-items: center;
+    /*Yatayda ortala*/
+    align-items: center;
+    /*dikeyde ortala */
+}
