@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllProducts } from '../redux/slices/productSlice';
+import Product from './Product';
+import '../css/Product.css'
+
 function ProductList() {
 
     const dispatch = useDispatch();
@@ -12,7 +15,12 @@ function ProductList() {
     }, [])
 
     return (
-        <div>
+        <div className='list'>
+            {
+                products && products.map((product) => (
+                    <Product key={product.id} product={product} />
+                ))
+            }
 
         </div>
     )
