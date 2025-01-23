@@ -1,9 +1,13 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../css/Product.css'
 import Button from '@mui/material/Button';
 
 function Product({ product }) {
     const { id, price, image, title, description } = product
+
+    const navigate = useNavigate();
+
     return (
         <div className='card'>
             <img className='image' src={image} alt='' />
@@ -12,7 +16,7 @@ function Product({ product }) {
                 <h3>{price} $</h3>
             </div>
             <div>
-                <Button variant="contained" color="secondary">
+                <Button onClick={() => navigate("/product-details/" + id)} variant="contained" color="secondary">
                     Detay
                 </Button>
             </div>

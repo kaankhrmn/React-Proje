@@ -20,3 +20,20 @@ body {
 #root {
     height: 100vh;
 }
+
+.pd-img {
+    width: 300px;
+    height: 400px;
+}
+
+.pd-button {
+    font-size: 40px;
+    margin-top: 40px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.pd-button:hover {
+    cursor: pointer;
+}

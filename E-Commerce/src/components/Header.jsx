@@ -4,6 +4,8 @@ import '../App.css'
 import { CiShoppingBasket } from "react-icons/ci";
 import { CiLight } from "react-icons/ci";
 import { IoMoonSharp } from "react-icons/io5";
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 
 function Header() {
@@ -23,11 +25,13 @@ function Header() {
         settheme(!theme)
     }
 
+    const navigate = useNavigate();
+
 
     return (
         <>
             <div style={{ alignItems: 'center', flexDirection: 'row', display: 'flex', justifyContent: 'space-between' }}>
-                <div className='row-flex'>
+                <div className='row-flex' onClick={() => navigate("/")}>
                     <img className='logo' src='./src/images/logo.png' />
                     <p className='icon-text'>Kaan A.Ş</p>
                 </div>
