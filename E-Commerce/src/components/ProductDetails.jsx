@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import { setselectedProduct } from '../redux/slices/productSlice'
+import { addToBasket } from '../redux/slices/basketSlice'
 import '../App.css'
 import { LuCirclePlus } from "react-icons/lu";
 import { BiMinusCircle } from "react-icons/bi";
@@ -25,6 +26,18 @@ function ProductDetails() {
         if (count > 0) {
             setcount(count - 1)
         }
+    }
+
+    const addBasket = () => {
+        const payload = {
+            id,
+            price,
+            image,
+            title,
+            description,
+            count
+        }
+        dispatch(addToBasket(payload))
     }
 
 
@@ -56,7 +69,7 @@ function ProductDetails() {
                         <BiMinusCircle onClick={minus} />
                     </div>
                     <div>
-                        <Button style={{ marginTop: '15px' }} variant="contained" color="error">
+                        <Button onClick={addBasket} style={{ marginTop: '15px' }} variant="contained" color="error">
                             Sepete Ekle
                         </Button>
                     </div>
