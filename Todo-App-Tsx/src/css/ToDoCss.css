@@ -14,3 +14,9 @@
     margin-right: 10px;
     cursor: pointer;
 }
+
+.input-edit {
+    border: none;
+    outline: none;
+    width: 400px;
+}
